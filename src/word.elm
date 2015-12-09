@@ -8,8 +8,8 @@ import StartApp.Simple exposing (start)
 
 type alias Model =
   {
-  freq = Int,
-  value = String
+  freq: Int,
+  value: String
 }
 
 initialModel: String -> Int -> Model
@@ -18,13 +18,12 @@ initialModel val num =
     freq = num
   }
 
-view : Signal.Address Status -> Model -> Html.Html
-view address model =
+view : Model -> Html.Html
+view model =
   div [Html.Attributes.class "wordWrapper"] [
     Html.span [] [ text Model.value ]
-     ]
   ]
 
-update: Status -> Model -> Model
+update: Model -> Model
 update action model =
   model
